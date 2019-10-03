@@ -1,4 +1,5 @@
 import React from 'react';
+import { List, Card , Icon, Button} from 'semantic-ui-react'
 class NewsItem extends React.Component {
     constructor(props) {
         super(props);
@@ -16,19 +17,22 @@ class NewsItem extends React.Component {
     render() {
         let itemDisplayContent;
         if(this.state.content){
-            itemDisplayContent = <div>
-                <h3>{this.state.content.title}</h3>
-                <p>
-                    Type: <i>{this.state.content.type}</i>
-                </p>
-                <p>
-                    {this.state.content.url}
-                </p>
-                <p>
-                    {this.state.content.text}
-                </p>
-
-            </div>
+            itemDisplayContent = <Card fluid>
+                <Card.Content>
+                    <Card.Header>
+                        {this.state.content.title}
+                    </Card.Header>
+                    <Card.Meta>
+                        {this.state.content.type}
+                    </Card.Meta>
+                    <Card.Description>
+                        {this.state.content.text}
+                    </Card.Description>
+                </Card.Content>
+                <Card.Content extra>
+                    <a href={this.state.content.url}>{this.state.content.url}</a>
+                </Card.Content>
+            </Card>
         }else{
             itemDisplayContent = <div>
                 Loading....

@@ -1,5 +1,6 @@
 import React from 'react';
 import NewsItem from './NewsItem';
+import { Container, List, Card } from 'semantic-ui-react';
 
 import './App.css';
 class App extends React.Component {
@@ -14,13 +15,17 @@ class App extends React.Component {
     const numberOfItems = this.state.data && this.state.data.length;
     let displayValue;
     if(numberOfItems){
-      displayValue = (<ul>        
-        {this.state.data.map(newsItemId => <li key={newsItemId}>< NewsItem itemId={newsItemId} /></li> )}
-      </ul>)
+      displayValue = (<List>        
+        {this.state.data.map(newsItemId => <List.Item key={newsItemId}>< NewsItem itemId={newsItemId} /></List.Item> )}
+      </List>)
     }else{
-      displayValue = (<div>
-        Going to load data....
-      </div>);
+      displayValue = (<Card fluid>
+        <Container>
+          <p>
+          Loading data....
+          </p>
+        </Container>
+      </Card>);
     }
 
     return (
