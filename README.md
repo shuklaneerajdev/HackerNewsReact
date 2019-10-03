@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+The basic goal of the application is to make use of Firebase API for Hacker News and display the news items.
+
 ## Available Scripts
 
 In the project directory, you can run:
